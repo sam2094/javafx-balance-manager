@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterExpenseController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="183.0" text="Note">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="noteField" prefHeight="35.0" prefWidth="550.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="165.0" text="Amount">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amountField" layoutX="10.0" layoutY="38.0" prefHeight="35.0" prefWidth="550.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="80.0" prefHeight="28.0" prefWidth="165.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker" prefHeight="35.0" prefWidth="568.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </DatePicker>
+            <Label fx:id="categoryLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="150.0" prefHeight="28.0" prefWidth="450.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onMouseClicked="#addExpense" prefHeight="52.0" prefWidth="284.0" text="Save">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

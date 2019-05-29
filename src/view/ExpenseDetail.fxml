@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExpenseDetailController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER" prefHeight="82.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="93.0" text="Start date">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="startDatePicker" prefHeight="39.0" prefWidth="140.0">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Label layoutX="29.0" layoutY="51.0" prefHeight="25.0" prefWidth="79.0" text="End date">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="endDatePicker" layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Button mnemonicParsing="false" onMouseClicked="#filterByDate" prefHeight="41.0" prefWidth="100.0" text="Filter">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="564.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="41.0" prefWidth="100.0" text="Refresh">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="7.0" right="7.0" top="10.0" />
+               </padding>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="countLabel" prefHeight="27.0" prefWidth="450.0" text="Count">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="messagelabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="644.0" text="Message">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="100.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="8.0" left="15.0" />
+               </padding>
+            </HBox>
+         </bottom>
+         <center>
+            <TableView fx:id="expenseTableView" prefHeight="419.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="noteCol" prefWidth="75.0" text="Note" />
+                <TableColumn fx:id="amountCol" prefWidth="75.0" text="Amount" />
+                  <TableColumn fx:id="dateCol" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="categoryCol" prefWidth="75.0" text="Category" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

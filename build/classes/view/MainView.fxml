@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="770.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="608.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="166.0" text="Menu">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Accordion>
+                    <panes>
+                      <TitledPane animated="false" onMouseClicked="#incomeChartAction" text="Income">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="218.0">
+                                 <children>
+                                    <VBox layoutX="59.0" prefHeight="180.0" prefWidth="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ListView fx:id="incomeCategoryListView" onMouseClicked="#onIncomeCategorySelect" prefHeight="200.0" prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </ListView>
+                                          <TextField fx:id="incomeCategoryNameField" promptText="Category name">
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" onMouseClicked="#saveIncomeCategory" prefHeight="36.0" prefWidth="194.0" text="Save Category">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#removeIncomeCategory" prefHeight="36.0" prefWidth="194.0" text="Delete Category">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#addIncome" prefHeight="36.0" prefWidth="194.0" text="Register new income">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#goToIncomeDetails" prefHeight="36.0" prefWidth="194.0" text="Detailed report">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="36.0" prefWidth="194.0" text="Refresh">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="7.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                      </TitledPane>
+                        <TitledPane animated="false" layoutX="10.0" layoutY="10.0" onMouseClicked="#expenseChartAction" text="Expenses">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="218.0">
+                                 <children>
+                                    <VBox layoutX="59.0" prefHeight="180.0" prefWidth="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ListView fx:id="expenseCategoryListView" onMouseClicked="#onExpenseCategorySelect" prefHeight="200.0" prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </ListView>
+                                          <TextField fx:id="expenseCategoryNameField" promptText="Category name">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" onMouseClicked="#saveExpenseCategory" prefHeight="36.0" prefWidth="194.0" text="Save Category">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#removeExpenseRepository" prefHeight="36.0" prefWidth="194.0" text="Delete Category">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#addExpense" prefHeight="36.0" prefWidth="194.0" text="Register new expense">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#goToExpenseDetails" prefHeight="36.0" prefWidth="194.0" text="Detailed report">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="36.0" prefWidth="194.0" text="Refresh">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="7.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="10.0" layoutY="41.0" text="Business Plan">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="218.0">
+                                 <children>
+                                    <VBox prefHeight="512.0" prefWidth="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ListView fx:id="plansList" onMouseClicked="#fillPlanTable" prefHeight="260.0" prefWidth="194.0" />
+                                          <Button mnemonicParsing="false" onMouseClicked="#goToPlan" prefHeight="44.0" prefWidth="194.0" text="Add Plan">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                           </content>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TitledPane>
+                    </panes>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Accordion>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="600.0" prefWidth="571.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="totalBalanceLabel" prefHeight="37.0" prefWidth="255.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="forChart" alignment="TOP_CENTER" prefHeight="308.0" prefWidth="680.0">
+                     <children>
+                        <PieChart fx:id="chart" prefHeight="308.0" prefWidth="789.0" />
+                     </children></HBox>
+                  <HBox fx:id="labelBox" alignment="CENTER" prefHeight="34.0" prefWidth="780.0">
+                     <children>
+                        <Label fx:id="planNameLabel" prefHeight="17.0" prefWidth="137.0" text="Plan name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="planAmountLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="137.0" text="Plan Amount">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="planStartDateLabel" layoutX="147.0" layoutY="10.0" prefHeight="17.0" prefWidth="137.0" text="Start Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="planEndDateLabel" layoutX="464.0" layoutY="17.0" prefHeight="17.0" prefWidth="137.0" text="End Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="planTableView" prefHeight="240.0" prefWidth="563.0">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <columns>
+                        <TableColumn fx:id="categoryCol" prefWidth="75.0" text="Category" />
+                        <TableColumn fx:id="allotmentAmountCol" prefWidth="75.0" text="Allotment amount" />
+                        <TableColumn fx:id="progressBarCol" prefWidth="75.0" text="Progress bar" />
+                        <TableColumn fx:id="categorySpentAmountCol" prefWidth="75.0" text="Amount spent" />
+                        <TableColumn fx:id="procentCol" prefWidth="75.0" text="Procent" />
+                        <TableColumn fx:id="tempCol" prefWidth="75.0" text="Temp" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

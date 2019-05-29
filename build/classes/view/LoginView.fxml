@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="207.0" layoutY="53.0" prefHeight="17.0" prefWidth="137.0" text="Username">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="157.0" layoutY="78.0" prefHeight="30.0" prefWidth="237.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="207.0" layoutY="118.0" prefHeight="17.0" prefWidth="137.0" text="Password" AnchorPane.bottomAnchor="207.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="195.0" layoutY="203.0" mnemonicParsing="false" onMouseClicked="#userLogin" prefHeight="41.0" prefWidth="161.0" text="Login" textFill="#806b11">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="passwordField" layoutX="157.0" layoutY="152.0" prefHeight="30.0" prefWidth="237.0" />
+      <Button fx:id="deleteButton" alignment="CENTER" contentDisplay="CENTER" layoutX="195.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#removeUser" prefHeight="41.0" prefWidth="161.0" text="Delete User" textFill="#ff0909">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="registerButton" alignment="CENTER" contentDisplay="CENTER" layoutX="195.0" layoutY="203.0" mnemonicParsing="false" onMouseClicked="#gotoRegister" prefHeight="41.0" prefWidth="161.0" text="Register" textFill="#806b11">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
